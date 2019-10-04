@@ -20,7 +20,7 @@
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0"
   },
-  "homepage": "https://github.com/TargetTaiga/stringify-jsx.git",
+  "homepage": "https://github.com/TargetTaiga/stringify-jsx.git#readme",
   "bugs": {
     "url": "https://github.com/TargetTaiga/stringify-jsx/issues"
   },
