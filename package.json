@@ -24,6 +24,7 @@
   "bugs": {
     "url": "https://github.com/TargetTaiga/stringify-jsx/issues"
   },
+  "keywords": ["jsx", "templates", "html"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/TargetTaiga/stringify-jsx.git"
