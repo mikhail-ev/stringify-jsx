@@ -1,0 +1,23 @@
+{
+  "name": "stringify-jsx",
+  "version": "1.0.0",
+  "description": "JSX syntax stringifier allowing to use JSX outside of React projects",
+  "main": "dist/stringify-jsx.js",
+  "module": "dist/stringify-jsx.es6.js",
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "author": {
+    "name": "targettaiga",
+    "email": "targettaiga@gmail.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "esprima": "^4.0.1"
+  },
+  "devDependencies": {
+    "rollup": "^1.23.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0"
+  }
+}
