@@ -76,7 +76,7 @@ function getElementReplacements(replacements, elementStart, elementEnd) {
             }));
 }
 
-export default function stringifyJsx(code, {sourceType = 'module', customAttributeReplacements = {}, customReplacementFn}) {
+export default function stringifyJsx(code, {sourceType = 'module', customAttributeReplacements = {}, customReplacementFn} = {}) {
     const attributeReplacementsMap = Object.assign({}, JSX_ATTRIBUTE_REPLACEMENTS, customAttributeReplacements);
     const {jsxElements, jsxReplacements} = parse(code, {sourceType, attributeReplacementsMap});
     jsxElements
