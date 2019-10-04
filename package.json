@@ -1,7 +1,7 @@
 {
   "name": "stringify-jsx",
   "version": "1.1.0",
-  "description": "JSX syntax stringifier allowing to use JSX outside of React projects",
+  "description": "JSX adaptation as a template system for non-React projects",
   "main": "dist/stringify-jsx.js",
   "module": "dist/stringify-jsx.es6.js",
   "scripts": {
@@ -24,7 +24,7 @@
   "bugs": {
     "url": "https://github.com/TargetTaiga/stringify-jsx/issues"
   },
-  "keywords": ["jsx", "templates", "html"],
+  "keywords": ["jsx", "templates", "html", "react"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/TargetTaiga/stringify-jsx.git"
