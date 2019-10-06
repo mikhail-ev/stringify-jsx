@@ -1,7 +1,6 @@
 # stringify-jsx
 JSX adaptation as a template system for non-React projects. Allowing to use JSX as a template everywhere adopting IDE's JSX highlight and formatting features.
-## Examples and documentation
-TLRD;
+## TLDR;
 
 Transforming JSX:
 ```jsx harmony
@@ -48,5 +47,6 @@ TBD
 * [rollup-plugin-stringify-jsx](https://github.com/TargetTaiga/rollup-plugin-stringify-jsx)
 
 ## TODO
-- [ ] Typings
 - [ ] Tests
+- [ ] Webpack plugin
+- [ ] Typings

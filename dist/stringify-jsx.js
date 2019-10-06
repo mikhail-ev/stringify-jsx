@@ -1,7 +1,9 @@
-import parser from '@babel/parser';
-import traverse from '@babel/traverse';
-import types from '@babel/types';
-import generator from '@babel/generator';
+'use strict';
+
+var parser = require('@babel/parser');
+var traverse = require('@babel/traverse');
+var types = require('@babel/types');
+var generator = require('@babel/generator');
 
 const JSX_ATTRIBUTE_REPLACEMENTS = {
     'className': 'class',
@@ -107,7 +109,7 @@ function getAttributeName(jsxIdentifierPath, options) {
     return options.customAttributeReplacements[name] || JSX_ATTRIBUTE_REPLACEMENTS[name] || name;
 }
 
-export default function stringifyJsx(code, customOptions = {}) {
+function stringifyJsx(code, customOptions = {}) {
     const options = mergeOptions(customOptions);
     const ast = parser.parse(code, options.parserOptions);
     traverse.default(ast, {
@@ -122,3 +124,5 @@ export default function stringifyJsx(code, customOptions = {}) {
     });
     return generator.default(ast, options.generatorOptions, code);
 }
+
+module.exports = stringifyJsx;

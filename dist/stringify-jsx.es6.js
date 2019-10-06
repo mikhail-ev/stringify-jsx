@@ -107,7 +107,7 @@ function getAttributeName(jsxIdentifierPath, options) {
     return options.customAttributeReplacements[name] || JSX_ATTRIBUTE_REPLACEMENTS[name] || name;
 }
 
-export default function stringifyJsx(code, customOptions = {}) {
+function stringifyJsx(code, customOptions = {}) {
     const options = mergeOptions(customOptions);
     const ast = parser.parse(code, options.parserOptions);
     traverse.default(ast, {
@@ -122,3 +122,5 @@ export default function stringifyJsx(code, customOptions = {}) {
     });
     return generator.default(ast, options.generatorOptions, code);
 }
+
+export default stringifyJsx;
