@@ -59,7 +59,7 @@ function transformChildren(jsxChildPaths, options) {
             }
         }
         if (childPath.isJSXExpressionContainer()) {
-            result.push(types.identifier(childPath.toString()));
+            result.push(types.identifier(childPath.get('expression').toString()));
         }
     });
     return result;
@@ -75,7 +75,7 @@ function transformOpeningElement(jsxOpeningElementPath, options) {
         if (valuePath.isJSXExpressionContainer()) {
             literals.push(types.stringLiteral(parts.join(' ')));
             parts = [];
-            literals.push(types.stringLiteral(' ' + name + '="')); // TODO expression value should be in ""
+            literals.push(types.stringLiteral(' ' + name + '="'));
             literals.push(types.identifier(valuePath.get('expression').toString()));
             parts.push('"');
         } else {
