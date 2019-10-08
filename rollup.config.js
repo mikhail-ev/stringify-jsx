@@ -15,14 +15,14 @@ const config = {
 };
 
 export default [{
-    input: 'src/index.js',
+    input: 'src/stringify-jsx.js',
     output: {
         file: 'dist/stringify-jsx.es6.js',
         format: 'esm'
     },
     ...config
 }, {
-    input: 'src/index.js',
+    input: 'src/stringify-jsx.js',
     output: {
         file: 'dist/stringify-jsx.js',
         format: 'cjs',
