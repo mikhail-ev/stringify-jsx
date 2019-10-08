@@ -16,7 +16,7 @@ Into this:
 class MyElement {
     render() {
         let title = "Hello World!";
-        return "<div>" + title + "</div>";
+        return `<div>${title}</div>`;
     }
 }
 ```
@@ -35,7 +35,7 @@ Into regular html:
 class MyElement {
     render() {
         let myClass = "action";
-        return "<label class=" + myClass + "for=\"button\"></label>";
+        return `<label class="${myClass}" for="button"></label>`;
     }
 }
 ```
@@ -46,7 +46,7 @@ npm i @babel/generator @babel/parser @babel/traverse @babel/types stringify-jsx
 ```
 ```js
 stringifyJsx('let title = "Hello World!";let html = <div>{title}</div>;').code
-// let title = "Hello World!";let html = "<div>" + title + "</div>";
+// let title = "Hello World!";let html = `<div>${title}</div>`;
 ```
 
 ## Options
@@ -75,7 +75,7 @@ stringifyJsx('<div value="hello world!"></div>', {
         'value': 'data-value'
     }
 }).code
-// "<div data-value=\"hello world!\">" + "</div>"
+// `<div data-value="hello world!"></div>`;
 ```
 
 #### customAttributeReplacementFn
@@ -85,7 +85,7 @@ stringifyJsx('<div value="hello world!"></div>', {
         return 'x-' + nodePath.node.name;
     }
 }).code
-// "<div x-value=\"hello world!\">" + "</div>"
+// `<div x-value="hello world!"></div>`
 ```
 Read more about [babel transformating operations](https://github.com/jamiebuilds/babel-handbook/blob/master/translations/en/plugin-handbook.md#transformation-operations).
 
@@ -98,8 +98,30 @@ stringifyJsx('let title = "Hello World!";let html = <div>{title}</div>;', {
         sourceFileName: 'index.js'
     }
 }).map
-// {"version":3,"sources":["index.js"],"names":["title","html"],"mappings":"AAAA,IAAIA,KAAK,GAAG,cAAZ;AACA,IAAIC,IAAI,+BAAR","sourcesContent":["let title = \"Hello World!\";\nlet html = <div>{title}</div>;"]}
+// {"version":3,"sources":["index.js"],"names":["title","html"],"mappings":"AAAA,IAAIA,KAAK,GAAG,cAAZ;AAA2B,IAAIC,IAAI,wBAAR","sourcesContent":["let title = \"Hello World!\";let html = <div>{title}</div>;"]}
 ```
+
+## Tagged templates ambiguity
+To provide an ability to use stringify-jsx with tagged template literals (and build upon it libraries like [lit-html](https://lit-html.polymer-project.org/)) all function calls that contain JSX markup as argument are being transformed into tagged template literals.
+
+This call:
+```jsx harmony
+html(<div>JSX Markup!</div>);
+```
+Will be transformed to:
+```js
+html`<div>JSX Markup!</div>`; 
+```
+If it's necessary to pass string transformed from JSX as function argument - assign JSX to a variable first:
+```jsx harmony
+const markup = <div>JSX Markup!</div>;
+html(markup);
+```  
+So function call in resulting code will remain unchanged:
+```js
+const markup = `<div>JSX Markup!</div>`;
+html(markup);
+``` 
 
 ## Notes
 * Does not modify self-closing tags 
