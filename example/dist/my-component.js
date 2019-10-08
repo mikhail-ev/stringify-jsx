@@ -1,7 +1,10 @@
 class MyComponent {
   render() {
     const id = "myButton";
-    return "<div>" + ("<label" + " for=\"" + id + "\"/>" + ("<button" + " id=\"" + id + "\" type=\"submit\"/>")) + "</div>";
+    return f`<div id="${id}" value="10" class="${f()}"><label for="${id}"/><button id="${id}" type="submit"/>
+                Hello World! ${id}</div>`;
   }
 
 }
+
+function f() {}

@@ -1,11 +1,12 @@
 {
   "name": "stringify-jsx",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "description": "JSX adaptation as a template system for non-React projects",
   "main": "dist/stringify-jsx.js",
   "module": "dist/stringify-jsx.es6.js",
   "scripts": {
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "build:w": "rollup -c -w"
   },
   "type": "module",
   "author": {
