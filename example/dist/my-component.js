@@ -1,10 +1,6 @@
-class MyComponent {
+export class MyComponent {
   render() {
-    const id = "myButton";
-    return f`<div id="${id}" value="10" class="${f()}"><label for="${id}"/><button id="${id}" type="submit"/>
-                Hello World! ${id}</div>`;
+    return `<div>Hello World!</div>`;
   }
 
 }
-
-function f() {}
