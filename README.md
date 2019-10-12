@@ -127,6 +127,10 @@ const markup = `<div>JSX Markup!</div>`;
 html(markup);
 ``` 
 
+## lit-html
+Due to support of tagged template literals and custom attribute replacements this tool can be used together with [lit-html](https://lit-html.polymer-project.org).
+Explore [this example](https://github.com/TargetTaiga/lit-project-template) for more information.
+
 ## Notes
 * Does not modify self-closing tags 
 
@@ -136,4 +140,4 @@ html(markup);
 ## TODO
 - [ ] Tests
 - [ ] Webpack plugin
-- [ ] Typings
+- [ ] Typescript
