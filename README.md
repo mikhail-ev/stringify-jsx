@@ -138,6 +138,7 @@ Explore [this example](https://github.com/TargetTaiga/lit-project-template) for 
 * [rollup-plugin-stringify-jsx](https://github.com/TargetTaiga/rollup-plugin-stringify-jsx)
 
 ## TODO
+- [ ] Babel plugin
 - [ ] Tests
 - [ ] Webpack plugin
 - [ ] Typescript
