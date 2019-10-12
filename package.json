@@ -1,6 +1,6 @@
 {
   "name": "stringify-jsx",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "description": "JSX adaptation as a template system for non-React projects",
   "main": "dist/stringify-jsx.js",
   "module": "dist/stringify-jsx.es6.js",

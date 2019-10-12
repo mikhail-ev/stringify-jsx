@@ -45,6 +45,7 @@ function transformJSXOpeningElement(jsxOpeningElementPath, options) {
         const name = getAttributeName(attributePath.get('name'), options);
         const valuePath = attributePath.get('value');
         if (valuePath.isJSXExpressionContainer()) {
+            valuePath.traverse(getVisitor(options));
             partial.addQuasi(' ' + name + '="');
             partial.addExpression(
                 types.identifier(valuePath.get('expression').toString()));
@@ -88,6 +89,7 @@ function transformJSXChildren(jsxChildPaths, options) {
             partial.addQuasi(trimText(childPath.node.value, options));
         }
         if (childPath.isJSXExpressionContainer()) {
+            childPath.traverse(getVisitor(options));
             partial.addExpression(types.identifier(childPath.get('expression').toString()));
         }
     });
@@ -108,10 +110,8 @@ function transformCallToTaggedExpression(callExpressionPath, templateLiteral) {
     return types.taggedTemplateExpression(identifier, templateLiteral);
 }
 
-export default function stringifyJsx(code, customOptions = {}) {
-    const options = mergeOptions(customOptions);
-    const ast = parser.parse(code, options.parserOptions);
-    traverse.default(ast, {
+function getVisitor(options) {
+    return {
         JSXElement(path) {
             const templateLiteral = transformJSXElement(path, options).toTemplate();
             const parentPath = path.parentPath;
@@ -121,6 +121,12 @@ export default function stringifyJsx(code, customOptions = {}) {
                 path.replaceWith(templateLiteral);
             }
         }
-    });
+    };
+}
+
+export default function stringifyJsx(code, customOptions = {}) {
+    const options = mergeOptions(customOptions);
+    const ast = parser.parse(code, options.parserOptions);
+    traverse.default(ast, getVisitor(options));
     return generator.default(ast, options.generatorOptions, code);
 }
