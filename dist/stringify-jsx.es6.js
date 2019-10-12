@@ -142,11 +142,12 @@ function transformJSXChildren(jsxChildPaths, options) {
 }
 
 function getAttributeName(jsxIdentifierPath, options) {
-    if (options.customAttributeReplacementFn) {
-        return options.customAttributeReplacementFn(jsxIdentifierPath);
-    }
     const name = jsxIdentifierPath.node.name;
-    return options.customAttributeReplacements[name] || JSX_ATTRIBUTE_REPLACEMENTS[name] || name;
+    const defaultReplacement = JSX_ATTRIBUTE_REPLACEMENTS[name];
+    if (options.customAttributeReplacementFn) {
+        return options.customAttributeReplacementFn(jsxIdentifierPath, defaultReplacement);
+    }
+    return options.customAttributeReplacements[name] || defaultReplacement || name;
 }
 
 function transformCallToTaggedExpression(callExpressionPath, templateLiteral) {
