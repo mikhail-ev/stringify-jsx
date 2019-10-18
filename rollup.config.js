@@ -1,16 +1,6 @@
-import resolve from 'rollup-plugin-node-resolve';
-import json from 'rollup-plugin-json';
-
 const config = {
     external: [
-        '@babel/types',
-        '@babel/traverse',
-        '@babel/generator',
-        '@babel/parser'
-    ],
-    plugins: [
-        json(),
-        resolve()
+        '@babel/core'
     ]
 };
 

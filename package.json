@@ -1,6 +1,6 @@
 {
   "name": "stringify-jsx",
-  "version": "3.2.0",
+  "version": "4.0.0",
   "description": "JSX adaptation as a template system for non-React projects",
   "main": "dist/stringify-jsx.js",
   "module": "dist/stringify-jsx.es6.js",
@@ -14,17 +14,12 @@
     "email": "targettaiga@gmail.com"
   },
   "license": "MIT",
-  "peerDependencies": {
-    "@babel/generator": "^7.6.2",
-    "@babel/parser": "^7.6.2",
-    "@babel/traverse": "^7.6.2",
-    "@babel/types": "^7.6.1"
+  "dependencies": {
+    "@babel/core": "^7.6.4",
+    "babel-plugin-transform-stringify-jsx": "^4.0.0"
   },
   "devDependencies": {
-    "rollup": "^1.23.0",
-    "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-json": "^4.0.0",
-    "rollup-plugin-node-resolve": "^5.2.0"
+    "rollup": "^1.23.0"
   },
   "homepage": "https://github.com/TargetTaiga/stringify-jsx.git#readme",
   "bugs": {
