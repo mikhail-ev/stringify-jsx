@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should transform basic JSX 1`] = `"const html = \`<div>\${'Hello ' + ' World!'}</div>\`;"`;

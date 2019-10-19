@@ -1,0 +1,2 @@
+## Testing
+The core is located in [babel-plugin-transform-stringify-jsx](https://github.com/TargetTaiga/babel-plugin-transform-stringify-jsx). Only basic test case is tested in this repo. Find more test cases [here](https://github.com/TargetTaiga/babel-plugin-transform-stringify-jsx/tree/master/tests).

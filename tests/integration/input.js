@@ -1,0 +1,1 @@
+const html = <div>{'Hello ' + ' World!'}</div>;
