@@ -133,6 +133,9 @@ Explore [example project](https://github.com/TargetTaiga/lit-project-template) f
 ## Babel plugin
 The core of stringify-jsx was moved to [babel-plugin-transform-stringify-jsx](https://github.com/TargetTaiga/babel-plugin-transform-stringify-jsx). If inline usage is not necessary please consider using combination babel + babel-plugin-transform-stringify-jsx. Explore [example project](https://github.com/TargetTaiga/lit-project-template).
 
+## Other plugins
+* [rollup-plugin-stringify-jsx](https://github.com/TargetTaiga/rollup-plugin-stringify-jsx)
+
 ## TODO
 - [x] Babel plugin
 - [x] Tests (babel-plugin contains core so tests are located there)
