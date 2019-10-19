@@ -6,7 +6,8 @@
   "module": "dist/stringify-jsx.es6.js",
   "scripts": {
     "build": "rollup -c",
-    "build:w": "rollup -c -w"
+    "build:w": "rollup -c -w",
+    "test": "jest"
   },
   "type": "module",
   "author": {
