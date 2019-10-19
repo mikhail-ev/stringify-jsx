@@ -135,5 +135,5 @@ The core of stringify-jsx was moved to [babel-plugin-transform-stringify-jsx](ht
 
 ## TODO
 - [x] Babel plugin
-- [ ] Tests
+- [x] Tests (babel-plugin contains core so tests are located there)
 - [ ] Typescript
